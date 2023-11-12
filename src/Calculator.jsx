@@ -26,6 +26,9 @@ const Calculator = () => {
     } else if (operacion === "multiplicar") {
       setResultado(valor1 * valor2);
     }
+    setValor1(" ");
+    setValor2(" ");
+
   };
 
   return (
