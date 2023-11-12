@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import Calculator from './Calculator';
+import React, { useState } from "react";
+import Calculator from "./Calculator";
+import Navbar from "./Components/Navbar";
 
 function App() {
-
   return (
     <div>
-         <Calculator/>
+      <Navbar />
+      <Calculator />
     </div>
-
   );
 }
 
