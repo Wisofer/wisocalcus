@@ -23,7 +23,8 @@ const Historial = () => {
           {valores.map((item, index) => (
             <div key={index} className="bg-white rounded shadow p-4">
               <p className="text-gray-500">Fecha de creación: {item.created_at}</p>
-              <p className="text-gray-500">Valor: {item.valor}</p>
+              <p className="text-gray-500">Primer Valor: {item.valor1}</p>
+              <p className="text-gray-500">Segundo Valor: {item.valor2}</p>
               <p className="text-gray-500">Resultado: {item.resultado}</p>
             </div>
           ))}
