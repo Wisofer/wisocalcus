@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { supabase } from "./Components/Supabase";
 
 const Calculator = () => {
-  const [valor1, setValor1] = useState('');
-  const [valor2, setValor2] = useState('');
+  const [valor1, setValor1] = useState("");
+  const [valor2, setValor2] = useState("");
   const [resultado, setResultado] = useState(0);
 
   const handleChange1 = (e) => {
@@ -12,7 +13,7 @@ const Calculator = () => {
     setValor2(parseFloat(e.target.value));
   };
 
-  const handleSubmit = (operacion) => {
+  const handleSubmit = async (operacion) => {
     if (operacion === "suma") {
       setResultado(valor1 + valor2);
     } else if (operacion === "resta") {
@@ -26,9 +27,14 @@ const Calculator = () => {
     } else if (operacion === "multiplicar") {
       setResultado(valor1 * valor2);
     }
+
+    const result = await supabase
+      .from("historial")
+      .insert({ valor1: valor1, valor2: valor2, resultado: resultado });
+    console.log(result);
+
     setValor1(" ");
     setValor2(" ");
-
   };
 
   return (
@@ -45,6 +51,7 @@ const Calculator = () => {
             type="number"
             onChange={handleChange1}
             className="w-full p-2 border border-gray-300 rounded"
+            required
           />
         </div>
         <div className="mb-4">
@@ -57,6 +64,7 @@ const Calculator = () => {
             type="number"
             onChange={handleChange2}
             className="w-full p-2 border border-gray-300 rounded"
+            required
           />
         </div>
         <div className="flex flex-col md:flex-row justify-center">

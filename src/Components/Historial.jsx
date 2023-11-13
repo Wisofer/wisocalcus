@@ -18,7 +18,7 @@ const Historial = () => {
     <div className="min-h-screen bg-gray-100">
       <Navbar />
       <div className="max-w-5xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">Hola, soy el historial :D</h1>
+        <h1 className="text-3xl font-bold mb-4">HISTORIAL DE LAS OPERACIONES</h1>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {valores.map((item, index) => (
             <div key={index} className="bg-white rounded shadow p-4">
