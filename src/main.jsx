@@ -5,6 +5,7 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route, createBrowserRouter,Routes, RouterProvider } from 'react-router-dom'
 import Historial from './Components/Historial.jsx'
+import Error404 from './Components/Error404.jsx'
 
 const route = createBrowserRouter([
   {
@@ -14,6 +15,11 @@ const route = createBrowserRouter([
   {
     path:"/historial",
     element: <Historial/>
+
+  },
+  {
+    path:"*",
+    element: <Error404/>
 
   }
 
